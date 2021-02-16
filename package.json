@@ -10,7 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "child_process": "^1.0.2",
     "express": "^4.17.1",
-    "http": "0.0.1-security"
+    "http": "0.0.1-security",
+    "nodemon": "^2.0.7",
+    "python-shell": "^2.0.3",
+    "selenium-webdriver": "^4.0.0-beta.1"
   }
 }
