@@ -12,7 +12,13 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
     let responseArray = [];
 
     async function simulatorIng() {
-      let driver = new Builder().forBrowser('chrome').build();
+      const chrome = require('selenium-webdriver/chrome');
+      const options = new chrome.Options();
+
+      options.addArguments('--disable-dev-shm-usage');
+      options.addArguments('--no-sandbox');
+
+      let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
       const linkSimulator = "https://ing.ro/persoane-fizice/credite/ipotecar";
       driver.get(linkSimulator);
 
@@ -40,7 +46,12 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
 
     }
     async function simulatorBCR() {
-      let driver = new Builder().forBrowser('chrome').build();
+      const chrome = require('selenium-webdriver/chrome');
+      const options = new chrome.Options();
+
+      options.addArguments('--disable-dev-shm-usage');
+      options.addArguments('--no-sandbox');
+      let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
       const linkSimulator = "https://calculator-rate-credit.bcr.ro/";
       await driver.get(linkSimulator);
       
@@ -87,7 +98,12 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
     }
 
     async function simulatorBrd() {
-      let driver = new Builder().forBrowser('chrome').build();
+      const chrome = require('selenium-webdriver/chrome');
+      const options = new chrome.Options();
+
+      options.addArguments('--disable-dev-shm-usage');
+      options.addArguments('--no-sandbox');
+      let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
       const linkSimulator = "https://www.brd.ro/la-casa-mea";
       await driver.get(linkSimulator);
 
