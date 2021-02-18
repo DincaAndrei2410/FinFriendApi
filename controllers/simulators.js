@@ -106,100 +106,12 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
       responseArray.push(ingObj);
     }
 
-    // async function simulatorOtp() {
-    //   let driver = new Builder().forBrowser('chrome').build();
-    //   const linkSimulator = "https://www.otpbank.ro/ro/credit/ml";
-    //   await driver.get(linkSimulator);
-
-    //   await driver.executeScript("document.getElementById('edit-amount-value').value = " + valueBox);
-    //   await driver.executeScript("document.getElementById('edit-amount-range-slider').value = " + valueBox);
-    //   await driver.executeScript("document.getElementById('edit-time-value').value = " + nrMonths);
-    //   await driver.executeScript("document.getElementById('edit-time-range-slider').value = " + nrMonths);
-    //   await driver.executeScript("document.getElementById('edit-time-value').focus()");
-    //   await driver.executeScript("document.getElementById('edit-time-value').blur()");
-
-    //   const rataLunara = await driver.executeScript("document.getElementsByClassName('rata_luna')[0].textContent");
-    //   const rataList = await driver.findElements(By.className("rata_luna"));
-    //   // const sumaTotalaDePlata = await driver.findElement(By.className("total")).getText() + " LEI";
-    //   // const dobandaAnualaEfectiva = await driver.findElement(By.className("dae")).getText() + "%";
-
-    //   // console.log("rataLunara", rataLunara);
-    //   console.log("rata", rata[0].getText());
-
-    //   // console.log("sumaTotalaDePlata", sumaTotalaDePlata);
-    //   // console.log("dobandaAnualaEfectiva", dobandaAnualaEfectiva);
-
-    // }
-
-
-    // async function simulatorRaiffaisen() {
-    //   let driver = new Builder().forBrowser('chrome').build();
-    //   const linkSimulator = "https://calculator-rate-credit.bcr.ro/";
-    //   await driver.get(linkSimulator);
-      
-    //   await driver.executeScript("document.getElementById('product').value='CreditulCasaTa'");
-    //   await driver.executeScript("$( '#product' ).change()");
-    // }
-
-    // async function simulatorBt() {
-    //   let driver = new Builder().forBrowser('chrome').build();
-    //   driver.get('https://www.bancatransilvania.ro/simulator-credite/');
-    //   try{
-    //     await driver.executeScript("document.getElementById('tip2').click()");
-    //     await driver.executeScript("document.getElementById('valoare_maxima').value = " + inputValue);
-    //   }
-    //   catch(err) {
-    //     await driver.executeScript("document.getElementById('valoare_maxima').value = " + inputValue);
-    //   }
-     
-
-    // }
-
-    // async function simulatorCec() {
-    //   let driver = new Builder().forBrowser('chrome').build();
-    //   driver.get('https://www.cec.ro/credit-ipotecar-imobiliar');
-
-    //   setTimeout(async function(){ 
-        
-    //   await driver.executeScript("document.getElementById('calculator_borrowed_value').value = '" + valueBox + "'");
-    //   await driver.executeScript("document.getElementById('calc_value').value = " + valueBox);
-
-    //   await driver.executeScript("document.getElementById('calculator_repayment_time').value = '" + nrMonths + " LUNI'");
-    //   await driver.executeScript("document.getElementById('calc_range').value = " + nrMonths);
-    //   }, 2000);
-
-    //   // await driver.findElement(By.id('calculator-calculate-btn')).sendKeys(Key.RETURN);
-    //   // const dobanda = await driver.executeScript("document.getElementById('calculator_repayment_time').textContent");
-    //   // console.log("dobanda", dobanda);
-      
-    // }
-  
-    // simulatorCec();
-    // simulatorBt();
-    // simulatorRaiffaisen();
-    // simulatorBrd();
-    // simulatorOtp();
-
-    // simulatorIng().then(() => {
-    //   simulatorBrd().then(()=> {
-    //     // simulatorBCR().then(() => {
-    //       // setTimeout(function(){ 
-    //         res.status(200).send(responseArray);
-    //       // }, 2000);
-    //     // })
-    //   })
-    // })
-
     Promise.all([simulatorBCR(), simulatorIng(), simulatorBrd()]).then(()=>{
       setTimeout(function(){ 
         res.status(200).send(responseArray);
       }, 2000);
     })
 
-  
 })
-
-
-
 
 module.exports = router;
