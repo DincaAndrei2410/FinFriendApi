@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 const port = 3005;
 http.listen(port, () => console.log(`Server started at port: ${port}`));
 
