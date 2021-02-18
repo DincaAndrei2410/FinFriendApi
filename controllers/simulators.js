@@ -16,6 +16,8 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
       const options = new chrome.Options();
 
       options.addArguments('--disable-dev-shm-usage');
+      // options.addArguments('--headless');
+      options.addArguments('--window-size');
       options.addArguments('--no-sandbox');
 
       let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
@@ -50,6 +52,8 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
       const options = new chrome.Options();
 
       options.addArguments('--disable-dev-shm-usage');
+      // options.addArguments('--headless');
+      options.addArguments('--window-size');
       options.addArguments('--no-sandbox');
       let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
       const linkSimulator = "https://calculator-rate-credit.bcr.ro/";
@@ -102,6 +106,8 @@ router.get('/:value/:advance/:nrYears', (req, res) => {
       const options = new chrome.Options();
 
       options.addArguments('--disable-dev-shm-usage');
+      // options.addArguments('--headless');
+      options.addArguments('--window-size');
       options.addArguments('--no-sandbox');
       let driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
       const linkSimulator = "https://www.brd.ro/la-casa-mea";
