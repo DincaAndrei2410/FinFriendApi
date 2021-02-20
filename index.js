@@ -1,9 +1,10 @@
 const express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-let http = require('http').Server(app);
+const bodyParser = require('body-parser');
+const app = express();
+const http = require('http').Server(app);
 
 const simulators = require('./controllers/simulators.js');
+const finance = require('./controllers/finance.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.json({
@@ -23,3 +24,4 @@ const port = 3005;
 http.listen(port, () => console.log(`Server started at port: ${port}`));
 
 app.use('/simulators', simulators);
+app.use('/finance', finance);
