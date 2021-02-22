@@ -29,12 +29,12 @@ router.get('/historical', (req, res) => {
     for (var key in result) {
       let arr = result[key].reverse();
       for (let i = 1; i < arr.length; i++) {
-        arr[i].dailyPercentageChange = arr[i].close / arr[i - 1].close - 1;
-        if (i === 1) {
-          arr[i].cumulativeReturn = arr[i].close / arr[i - 1].close - 1;
+        if (i === 0) {
+          arr[i].cumulativeReturn = 1;
         }
         else {
-          arr[i].cumulativeReturn = (arr[i].close / arr[i - 1].close - 1) * (arr[i - 1].close / arr[i - 2].close - 1);
+          arr[i].dailyPercentageChange = arr[i].close / arr[i - 1].close - 1;
+          arr[i].cumulativeReturn = (arr[i].close / arr[i - 1].close) * arr[i - 1].cumulativeReturn;
         }
       }
       responseObj[key] = arr;
@@ -58,7 +58,21 @@ router.get('/historicalByCompany/:symbol', (req, res) => {
     to: d2,
     period: 'd'
   }).then(function (result) {
-    res.status(200).send(result);
+    let responseObj = {};
+    for (var key in result) {
+      let arr = result[key].reverse();
+      for (let i = 0; i < arr.length; i++) {
+        if (i === 0) {
+          arr[i].cumulativeReturn = 1;
+        }
+        else {
+          arr[i].dailyPercentageChange = arr[i].close / arr[i - 1].close - 1;
+          arr[i].cumulativeReturn = (arr[i].close / arr[i - 1].close) * arr[i - 1].cumulativeReturn;
+        }
+      }
+      responseObj[key] = arr;
+    }
+    res.status(200).send(responseObj);
   }).catch((err) => {
     res.status(500).send(err)
   })
