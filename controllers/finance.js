@@ -58,21 +58,18 @@ router.get('/historicalByCompany/:symbol', (req, res) => {
     to: d2,
     period: 'd'
   }).then(function (result) {
-    let responseObj = {};
-    for (var key in result) {
-      let arr = result[key].reverse();
-      for (let i = 0; i < arr.length; i++) {
-        if (i === 0) {
-          arr[i].cumulativeReturn = 1;
-        }
-        else {
-          arr[i].dailyPercentageChange = arr[i].close / arr[i - 1].close - 1;
-          arr[i].cumulativeReturn = (arr[i].close / arr[i - 1].close) * arr[i - 1].cumulativeReturn;
-        }
+    let arr = result[symbol].reverse();
+    for (let i = 0; i < arr.length; i++) {
+      if (i === 0) {
+        arr[i].cumulativeReturn = 1;
       }
-      responseObj[key] = arr;
+      else {
+        arr[i].dailyPercentageChange = arr[i].close / arr[i - 1].close - 1;
+        arr[i].cumulativeReturn = (arr[i].close / arr[i - 1].close) * arr[i - 1].cumulativeReturn;
+      }
     }
-    res.status(200).send(responseObj);
+
+    res.status(200).send(arr);
   }).catch((err) => {
     res.status(500).send(err)
   })
