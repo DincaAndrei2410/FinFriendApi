@@ -6,7 +6,9 @@ const http = require('http').Server(app);
 
 const simulators = require('./controllers/simulators.js');
 const finance = require('./controllers/finance.js');
-app.options('*', cors()) // include before other routes 
+const sentiment = require('./controllers/sentiment.js');
+
+app.options('*', cors())
 app.use(cors({
   origin: ['http://localhost:8080'],
   credentials: true,
@@ -36,3 +38,4 @@ http.listen(port, () => console.log(`Server started at port: ${port}`));
 
 app.use('/simulators', simulators);
 app.use('/finance', finance);
+app.use('/sentiment', sentiment);
