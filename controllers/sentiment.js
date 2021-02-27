@@ -7,7 +7,11 @@ const simbolsDictionary = {
     "GOOGL": 'google',
     "TSLA": 'tesla',
     "FB": 'facebook',
-    "NFLX": 'netflix'
+    "NFLX": 'netflix',
+    "MSFT": 'microsoft',
+    "NVDA": 'nvidia',
+    "V": 'visa',
+    "MA": 'mastercard'
 };
 
 

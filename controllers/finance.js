@@ -10,7 +10,11 @@ const SYMBOLS = [
   'GOOGL',
   'TSLA',
   'FB',
-  'NFLX'
+  'NFLX',
+  'MSFT',
+  'NVDA',
+  'V',
+  'MA'
 ];
 
 router.get('/historical', (req, res) => {
