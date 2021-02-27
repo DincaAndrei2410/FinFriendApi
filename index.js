@@ -9,6 +9,7 @@ const fs = require('fs')
 const simulators = require('./controllers/simulators.js');
 const finance = require('./controllers/finance.js');
 const sentiment = require('./controllers/sentiment.js');
+const learning = require('./controllers/learning.js');
 
 const port = 3005;
 const portSecure = 3006;
@@ -57,3 +58,4 @@ http.listen(port, () => console.log(`Server started at port: ${port}`));
 app.use('/simulators', simulators);
 app.use('/finance', finance);
 app.use('/sentiment', sentiment);
+app.use('/learning', learning);
