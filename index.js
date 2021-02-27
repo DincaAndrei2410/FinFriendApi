@@ -38,21 +38,21 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-const server = https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-  requestCert: false,
-  rejectUnauthorized: false
-}, app).listen(portSecure, () => {
-  console.log(`Server started at port: ${portSecure} for https`)
-})
+// const server = https.createServer({
+//   key: fs.readFileSync('key.pem'),
+//   cert: fs.readFileSync('cert.pem'),
+//   requestCert: false,
+//   rejectUnauthorized: false
+// }, app).listen(portSecure, () => {
+//   console.log(`Server started at port: ${portSecure} for https`)
+// })
 
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// http.listen(port, () => console.log(`Server started at port: ${port}`));
+http.listen(port, () => console.log(`Server started at port: ${port}`));
 
 app.use('/simulators', simulators);
 app.use('/finance', finance);
