@@ -33,7 +33,7 @@ router.get('/analysis/:symbol', (req, res) => {
         const newArr = dataToSend.split(',');
         const positivePercentage = newArr[0].substr(1, newArr[0].length - 1) + "%";
         const negativePercentage = newArr[1].substr(1, newArr[1].length - 1) + "%";
-        const neutralPercentage = newArr[2].substr(1, newArr[2].length - 4) + "%";
+        const neutralPercentage = newArr[2].substr(1, newArr[2].length - 3) + "%";
         const objToSend = { positive: positivePercentage, negative: negativePercentage, neutral: neutralPercentage };
         res.status(200).send(objToSend);
     });
