@@ -22,7 +22,7 @@ router.get('/analysis/:symbol', (req, res) => {
 
     const { spawn } = require("child_process");
 
-    var python = spawn('python3', [`${process.cwd()}/controllers/sentiment-analysis.py`, stringForSearch]);
+    var python = spawn('python', [`${process.cwd()}\\controllers\\sentiment-analysis.py`, stringForSearch]);
 
     python.stdout.on('data', function (data) {
         console.log('Pipe data from python script ...');
@@ -37,7 +37,7 @@ router.get('/analysis/:symbol', (req, res) => {
         const newArr = dataToSend.split(',');
         const positivePercentage = newArr[0].substr(1, newArr[0].length - 1);
         const negativePercentage = newArr[1].substr(1, newArr[1].length - 1);
-        const neutralPercentage = newArr[2].substr(1, newArr[2].length - 3);
+        const neutralPercentage = newArr[2].substr(1, newArr[2].length - 4);
         const objToSend = { positive: +positivePercentage, negative: +negativePercentage, neutral: +neutralPercentage };
         res.status(200).send(objToSend);
     });
