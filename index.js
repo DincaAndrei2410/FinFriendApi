@@ -10,6 +10,9 @@ const simulators = require('./controllers/simulators.js');
 const finance = require('./controllers/finance.js');
 const sentiment = require('./controllers/sentiment.js');
 const learning = require('./controllers/learning.js');
+const banking = require('./controllers/banking.js');
+const budget = require('./controllers/budget.js');
+const investment = require('./controllers/investment.js');
 
 const port = 3005;
 const portSecure = 3006;
@@ -59,3 +62,6 @@ app.use('/simulators', simulators);
 app.use('/finance', finance);
 app.use('/sentiment', sentiment);
 app.use('/learning', learning);
+app.use('/banking', banking);
+app.use('/budget', budget);
+app.use('/investment', investment);

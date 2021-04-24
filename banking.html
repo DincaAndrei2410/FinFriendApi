@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        background-color: #F8F9F9;
+    }
+
+    .card {
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #383e56;
+    }
+
+    .card-title {
+        font-weight: 700;
+    }
+
+    .paragraph-title {
+        font-weight: 500;
+    }
+
+    .finance-icon {
+        width: 50px;
+        height: 50px;
+        float: right;
+        margin-top: -12px;
+    }
+
+    .page-title {
+        font-weight: 700;
+        padding: 0 6px;
+        font-size: 20px;
+        position: sticky;
+        top: 0;
+        background-color: #F8F9F9;
+        height: 60px;
+    }
+
+    .span-title {
+        margin-top: 16px;
+        display: inline-block;
+    }
+
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    .cards-template {
+        padding: 20px 0px 30px 0px;
+    }
+
+    .text-template {
+        padding: 30px 10px 30px 10px;
+    }
+</style>
+
+
+<body>
+
+
+    <div class="container" id="tour">
+
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+
+            <div class="page-title">
+                <span class="span-title">CRETITE BANCARE</span>
+            </div>
+
+            <button class="accordion">Credite Ipotecare</button>
+            <div class="panel">
+                <p>
+                    Sunte destinate achizitiei sau construirii unei locuinte. Avansul minim este de 15% pentru creditele
+                    in RON. Imobilul achizitionat/construit garanteaza creditul contractat.
+                </p>
+            </div>
+
+            <button class="accordion">Credite Imobiliare</button>
+            <div class="panel">
+                <p>Similar creditului ipotecar, insa nu este necesar ca imobilul achizitionat prin intermediul
+                    creditului sa garanteze creditul. Se utilizeaza alte ipoteci imobiliare, ce nu fac obiectul
+                    finantarii.</p>
+            </div>
+
+            <button class="accordion">Credite de nevoi personale fara ipoteca</button>
+            <div class="panel">
+                <p>Este util pentru cheltuieli mai consistente ce se pot rambursa pe o perioada mai indelungata (pana la
+                    5 ani). Se achita in rate lunare. </p>
+            </div>
+
+            <button class="accordion">Credite de nevoi personale cu ipoteca</button>
+            <div class="panel">
+                <p>In plus fata de creditul de nevoi personale fara ipoteca, aici se garanteaza si cu ipoteca construita
+                    in favoarea bancii asupra unuia sau a mai multor imobile aflate in proprietatea ta sau a unor terti.
+                </p>
+            </div>
+
+            <button class="accordion">Credite pentru nevoi personale specifice</button>
+            <div class="panel">
+                <p>Se acorda pe baza documentelor justificative. Tipuri de astfel de credite: credite pentru studii,
+                    pentru scopuri medicale, pentru achizitie autoturisme, pentru achizitionare sisteme de incalzire,
+                    pentru domeniul locativ.</p>
+            </div>
+
+            <div class="text-template">
+                Chiar independent de decizia de a solicita un credit, e important ca fiecare dintre noi să
+                evaluăm periodic, cu sinceritate, nivelul veniturilor și cheltuielilor, pentru a identifica
+                posibilitatea reducerii cheltuielilor și de a economisi din timp pentru evenimente neprevăzute
+                sau pentru etapa pensionării.
+            </div>
+
+            <div class="cards-template">
+
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <h3>Dobanda Anuala Efectiva (DAE)</h3>
+                            <p>DAE reprezintă costul total al
+                                creditului calculat sub forma unui procent
+                                anual în care sunt incluse atât dobânda, cât și
+                                comisioanele aferente acestuia (respectiv,
+                                comisionul de analiză și comisionul de
+                                administrare credit).</p>
+                            <p>Pentru a corela corect DAE în compararea creditelor, este foarte important
+                                ca acest indicator să fie calculat pentru aceeași sumă împrumutată și același termen de
+                                rambursare
+                                și aceeași modalitate de rambursare la nivelul tuturor ofertelor comparate. Pentru a fi
+                                sigur(ă) că
+                                obții o comparație relevantă, utilizează un calculator DAE pus la dispoziție de pagini
+                                de internet
+                                independente de comparație sau pe paginile de internet ale băncilor, în care introduci
+                                pentru
+                                fiecare produs toate costurile identificate și determini valoarea DAE aferentă sumei și
+                                perioadei de finanțare dorite.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+            </script>
+
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

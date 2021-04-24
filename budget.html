@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        background-color: #F8F9F9;
+    }
+
+    .card {
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #383e56;
+    }
+
+    .card-title {
+        font-weight: 700;
+    }
+
+    .paragraph-title {
+        font-weight: 500;
+    }
+
+    .finance-icon {
+        width: 50px;
+        height: 50px;
+        float: right;
+        margin-top: -12px;
+    }
+
+    .page-title {
+        font-weight: 700;
+        padding: 0 6px;
+        font-size: 20px;
+        position: sticky;
+        top: 0;
+        background-color: #F8F9F9;
+        height: 60px;
+    }
+
+    .span-title {
+        margin-top: 16px;
+        display: inline-block;
+    }
+
+    .span-subtitle {
+        margin-top: 3px;
+        display: block;
+    }
+
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    .cards-template {
+        padding: 20px 0px 30px 0px;
+    }
+
+    .text-template {
+        padding: 10px 10px 30px 10px;
+    }
+
+    .text-template-first {
+        padding: 40px 10px 30px 10px;
+    }
+
+
+    input[type=number],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #ff9933;
+        color: white;
+        padding: 10px 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+
+<body>
+
+
+    <div class="container" id="tour">
+
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+
+            <div class="page-title">
+                <span class="span-title">GESTIONAREA BUGETULUI.</span>
+                <span class="span-subtitle">ECONOMISIREA</span>
+            </div>
+
+            <div class="text-template-first">
+                <b>Gestionarea bugetului personal</b> este o realitate a vieţii noastre cotidiene, de felul în care ştim
+                să ne folosim de banii câştigaţi depind bunăstarea, echilibrul, liniştea şi prosperitatea prezentului şi
+                a viitorului.
+            </div>
+
+            <div class="text-template">
+                <b> Reducerea cheltuielilor </b> este esentiala. Acestea sunt de trei categorii: cheltuieli fixe –
+                impozite, facturi, chirii etc., cheltuieli curente – al căror cumul este variabil şi cheltuieli
+                ocazionale – achiziţionare de bunuri cu preţ ridicat, vacanţe etc.
+            </div>
+
+
+            <div class="cards-template">
+
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <h3>Regula 50/30/20</h3>
+                            <p>50% cheltuieli esentiale: credit, chirie, utilitati.</p>
+                            <p>30% cheltuieli dorite: haine, iesiri, sala.</p>
+                            <p>20% economii si investitii.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="text-template">
+                Genereaza-ti raportul potrivit regulii 50/30/20. Completeaza mai jos venitul tau net lunar:
+            </div>
+
+
+            <input type="number" id="venit" name="venit" placeholder="Venit net">
+            <input type="submit" value="Genereaza raport" onclick="myFunction()">
+
+            <p id="demo" class="text-template"></p>
+
+
+            <div class="text-template">
+                <b>Depozitele</b> reprezintă cele mai avantajoase şi sigure
+                modalităţi de economisire. Băncile oferă depozite
+                bancare pentru tine, ca persoană fizică sau pentru
+                persoana juridică pe care o reprezinţi.
+
+            </div>
+
+            <button class="accordion">Conturile curente sau depozitele la vedere </button>
+            <div class="panel">
+                <p>
+                    Prin intermediul lor se pot face încasări (din salarii, de la alți titulari de cont etc.) și
+                    plăți (servicii, produse, utilități, rate la credite etc.). De regulă, acestor conturi li se pot
+                    atașa și carduri bancare. Titularul de cont poate avea acces oricând la disponibilități.
+                    Aceste conturi pot fi sau nu purtătoare de dobândă la vedere (mai mică decât cea
+                    pentru depozitele la termen). În aceste depozite/conturi păstrăm fondurile pentru nevoi
+                    curente (plăți facturi, cumpărături, acoperirea cheltuielilor de întreținere etc.).
+                </p>
+            </div>
+
+            <button class="accordion">Depozite la termen</button>
+            <div class="panel">
+                <p>pot fi constituite pe
+                    termene fixe, cu scadenţă lunară sau pentru un multiplu de luni întregi. Dobânda este
+                    acordată la scadenţă şi poate fi fixă sau variabilă pe perioada de viaţă a depozitului. În
+                    ultimul timp, băncile oferă depozite la termen preponderent cu dobândă fixă. Pot fi
+                    prelungite automat şi poţi opta pentru capitalizarea dobânzii (respectiv dobânda să fie
+                    adăugată la suma din depozit, urmând ca pentru perioada următoare să primeşti
+                    dobândă pentru suma cumulată astfel).</p>
+            </div>
+
+            <button class="accordion">Conturile de economii</button>
+            <div class="panel">
+                <p>De obicei sunt mai flexibile decât depozitele la termen – poţi
+                    accesa fondurile fără a fi nevoit să aştepţi până la scadenţă şi fără a pierde dobânda
+                    acumulată. De obicei, rata dobânzii este variabilă şi se actualizează în fiecare lună, la
+                    aniversarea depozitului. Astfel, conturile de economii îmbină proprietăţi ale contului
+                    curent cu cele ale depozitelor la termen.</p>
+            </div>
+
+            <button class="accordion">Depozite în valută</button>
+            <div class="panel">
+                <p>se înscriu în categoriile de mai sus. Este necesar să iei în calcul
+                    tendinţa din evoluţia monedelor respective şi valoarea cursului valutar la momentul
+                    constituirii depozitului.
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+
+                function myFunction() {
+                    const venit = +document.getElementById("venit").value;
+                    const cheltuieli = 0.5 * venit;
+                    const dorinte = 0.3 * venit;
+                    const economii = 0.2 * venit;
+                    const raport = `Cheltuieli esentiale: ${cheltuieli} u.m. <br>
+                    Cheltuieli dorite: ${dorinte} u.m. <br>
+                    Economii si investitii: ${economii} u.m.`
+                    document.getElementById("demo").innerHTML = raport;
+                }
+            </script>
+
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
