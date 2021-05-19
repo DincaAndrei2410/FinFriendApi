@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        background-color: #F8F9F9;
+    }
+
+    .card {
+        border-radius: 25px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #383e56;
+    }
+
+    .card-title {
+        font-weight: 700;
+    }
+
+    .paragraph-title {
+        font-weight: 500;
+    }
+
+    .finance-icon {
+        width: 50px;
+        height: 50px;
+        float: right;
+        margin-top: -12px;
+    }
+
+    .page-title {
+        font-weight: 700;
+        padding: 0 6px;
+        font-size: 20px;
+        position: sticky;
+        top: 0;
+        background-color: #F8F9F9;
+        height: 60px;
+    }
+
+    .span-title {
+        margin-top: 16px;
+        display: inline-block;
+    }
+
+    .span-subtitle {
+        margin-top: 3px;
+        display: block;
+    }
+
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+    }
+
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+    }
+
+    .cards-template {
+        padding: 20px 0px 30px 0px;
+    }
+
+    .text-template {
+        padding: 10px 10px 30px 10px;
+    }
+
+    .text-template-first {
+        padding: 40px 10px 30px 10px;
+    }
+
+
+    input[type=number],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #ff9933;
+        color: white;
+        padding: 10px 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+
+<body>
+
+
+    <div class="container" id="tour">
+
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+
+            <div class="page-title">
+                <span class="span-title">INVESTIȚIILE</span>
+            </div>
+
+            <div class="text-template-first">
+                Pentru a te putea bucura de un viitor confortabil și lipsit de stres, este nevoie să faci anumite
+                <b>investiții </b> profitabile. Acestea îți pot genera surse suplimentare de venit, te pot ajuta să îți
+                finanțezi fondul de pensie sau chiar te pot scoate din anumite blocaje financiare în care te-ai putea
+                regăsi la un moment dat.
+            </div>
+
+            <div class="text-template">
+                <b>Toleranța la risc</b> și <b>orizontul de timp</b> joacă un rol extrem de important atunci când te
+                decizi spre ce tip de plasament să îți aloci fondurile.
+
+            </div>
+
+            <button class="accordion">Depozite bancare</button>
+            <div class="panel">
+                <p>
+                    Depozitele bancare sunt cele mai sigure investiții care există la ora actuală.
+
+                    Acestea oferă dobânzi depozite net superioare celor pe care le-ai încasa dacă ai avea banii depuși
+                    într-un cont de economii standard.
+
+                    Există pe piața din țara noastră bănci ce oferă randamente și de 3.8 % pe an (după taxe). Destul de
+                    bine, dacă ne întrebi pe noi.
+                </p>
+            </div>
+
+            <button class="accordion">Titluri de stat</button>
+            <div class="panel">
+                <p>Titlurile de stat (care mai poartă și denumirea de obligațiuni de stat) reprezintă niște instrumente
+                    financiare prin care un anumit stat atestă datoria publică a entității care emite titlurile.
+
+                    Altfel spus, prin titluri de stat cetățenii pot împrumuta statul pe o perioadă determinată, astfel
+                    încât Ministerul Finanțelor să poată achita din datoriile existente.
+
+                    La maturitate, posesorul obligațiunilor va primi înapoia suma creditată, plus o dobândă anuală fixă.
+
+                    Marele avantaj al acestor instrumente este acela că sunt neimpozitabile.</p>
+            </div>
+
+            <button class="accordion">Obligațiuni</button>
+            <div class="panel">
+                <p>Obligațiunile sunt împrumuturi care au loc între debitori (sau emitenți ai titlurilor) și creditori
+                    (cei care achiziționează obligațiunile).
+
+                    Emitenții se obligă să plătească creditorilor o anumită dobândă (sau cupoane) pentru suma
+                    împrumutată, la intervale fixe de timp, până la o dată anume din viitor, când împrumutul își va
+                    atinge maturitatea.
+
+                    La momentul respectiv, emitentul va trebui să returneze creditorului suma nominală.</p>
+            </div>
+
+            <button class="accordion">Fonduri de investiții</button>
+            <div class="panel">
+                <p>Fondurile de investiții, care mai sunt cunoscute și sub denumirea de organisme de plasament colectiv
+                    sau fonduri mutuale, au ca scop punerea la comun a banilor mai multor investitori privați, cu
+                    ajutorul cărora se realizează diverse plasamente financiare.
+
+                    Principalul obiectiv este acela de a multiplica sumele cu care oamenii au intrat inițial. Cu alte
+                    cuvinte, generarea de câștiguri.
+
+                    Cine vrea să investească în fonduri mutuale, trebuie să achiziționeze unități de fond ale
+                    respectivului fond. Prețul și valoarea unității sunt determinate periodic, la intervale predefinite
+                    de timp.
+
+                    Prin subscriere, investitorii devin, automat, acționari ai companiilor în care fondul plasează
+                    sumele de bani strânse.
+                </p>
+            </div>
+
+            <button class="accordion">ETF-uri</button>
+            <div class="panel">
+                <p>Din ce în ce mai multe persoane interesate de investiții financiare își îndreaptă atenția în ultima
+                    vreme către ETF-uri.
+
+                    Aceste instrumente financiare sunt pe un trend ascendent de popularitate și în țara noastră, numărul
+                    celor ce investesc îl ele crescând din 2008 și până în prezent cu peste 75 %.
+
+                    Denumirea produsului ETF vine de la Exchange Traded Fund și reprezintă practic un portofoliu
+                    diversificat de active, foarte similar cu fondurile de investiții ce au fost prezentate puțin mai
+                    devreme.
+
+                    Diferența între cele două instrumente financiare este că, spre deosebire de fondurile mutuale, a
+                    căror valoare se stabilește zilnic la finalul zilei, prețul unui ETF variază pe tot parcursul
+                    ședinței de tranzacționare.
+                </p>
+            </div>
+
+            <button class="accordion">Acțiuni</button>
+            <div class="panel">
+                <p>Ele reprezintă titluri care atestă dreptul de proprietate asupra unei părți din capitalul social al
+                    unei societăți emitente de acțiuni (sau S.A).
+
+                    Proprietarii respectivelor acțiuni sunt automat și proprietari ai unei părți din compania ce a emis
+                    acțiunile, cota parte fiind corespunzătoare numărului de acțiuni deținute.
+                </p>
+            </div>
+
+            <button class="accordion">Imobiliare</button>
+            <div class="panel">
+                <p>Investitia in imobiliare poate sa fie facuta fie pentru inchirierea imobilului, fie pentru vanzarea
+                    acestuia dupa o perioada in care pretul imobiliarelor va creste. Atunci când vine vorba de
+                    investiții imobiliare vs acțiuni, investitorii se feresc în a alege un câștigător clar.
+
+                    Imobiliarele au potențialul dezavantaj al achizițiilor făcute fără o analiză amănunțită a pieții,
+                    ceea ce poate duce la plata unei sume mai mari decât ar valora, efectiv, bunul respectiv.
+
+                    Totodată, lipsa de lichiditate poate expune investitorii din sectorul imobiliar unui risc destul de
+                    mare și unei imposibilități de a avea acces rapid la bani, atunci când situația o cere.
+                </p>
+            </div>
+
+            <button class="accordion">Criptomonede</button>
+            <div class="panel">
+                <p>se înscriu în categoriile de mai sus. Este necesar să iei în calcul
+                    tendinţa din evoluţia monedelor respective şi valoarea cursului valutar la momentul
+                    constituirii depozitului.
+                </p>
+            </div>
+
+
+
+
+
+
+
+
+            <script>
+
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null;
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px";
+                        }
+                    });
+                }
+
+            </script>
+
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
