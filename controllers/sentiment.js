@@ -22,8 +22,8 @@ router.get('/analysis/:symbol', (req, res) => {
 
     const { spawn } = require("child_process");
 
-    var python = spawn('python', [`${process.cwd()}\\controllers\\sentiment-analysis.py`, stringForSearch]);
-    // var python = spawn('python3', [`${process.cwd()}/controllers/sentiment-analysis.py`, stringForSearch]);
+    //var python = spawn('python', [`${process.cwd()}\\controllers\\sentiment-analysis.py`, stringForSearch]);
+    var python = spawn('python3', [`${process.cwd()}/controllers/sentiment-analysis.py`, stringForSearch]);
 
     python.stdout.on('data', function (data) {
         console.log('Pipe data from python script ...');
